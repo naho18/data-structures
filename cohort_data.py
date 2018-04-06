@@ -181,27 +181,51 @@ def find_cohort_by_student_name(student_list):
         return "Student not found."
 
 
-# ##########################################################################################
-# # Further Study Questions
+##########################################################################################
+# Further Study Questions
 
 
-# def find_name_duplicates(filename):
-#     """TODO: Return a set of student last names that have duplicates.
+def find_name_duplicates(filename):
+    """TODO: Return a set of student last names that have duplicates.
 
-#     Iterate over the data to find any last names that exist across all cohorts.
-#     Use set operations (set math) to create and return a set of these names.
+    Iterate over the data to find any last names that exist across all cohorts.
+    Use set operations (set math) to create and return a set of these names.
 
-#     For example:
-#     >>> find_name_duplicates("cohort_data.txt")
-#     set(['Weasley'])
+    For example:
+    >>> find_name_duplicates("cohort_data.txt")
+    set(['Weasley'])
 
-#     """
+    """
 
-#     duplicate_names = set()
+    duplicate_names = set()
 
-#     # Code goes here
+    cohort_data = open(filename)
 
-#     return duplicate_names
+    last_name = hogwarts_by_house(filename)
+
+    print last_name
+    
+    duplicate_list = []
+
+
+    for i, item in enumerate(last_name):
+        if last_name[i-1] == item:
+            duplicate_list.append(item)
+
+    print duplicate_list
+
+
+    # i=0
+    # while i < len(last_name):
+    #     j=i+1
+    #     while j < len(last_name):
+    #         if last_name[i] == last_name[j]:
+    #             duplicate_list.append(last_name[i])
+    #             print last_name[i]
+    #         j+=1
+    #     i+=1
+
+    return duplicate_names
 
 
 # def find_house_members_by_student_name(student_list):
